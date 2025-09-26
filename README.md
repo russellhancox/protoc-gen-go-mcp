@@ -1,7 +1,7 @@
 # `protoc-gen-go-mcp`
 
-[![Test](https://github.com/northpolesec/protoc-gen-go-mcp/actions/workflows/test.yml/badge.svg)](https://github.com/northpolesec/protoc-gen-go-mcp/actions/workflows/test.yml)
-[![Go Report Card](https://goreportcard.com/badge/github.com/northpolesec/protoc-gen-go-mcp)](https://goreportcard.com/report/github.com/northpolesec/protoc-gen-go-mcp)
+[![Test](https://github.com/russellhancox/protoc-gen-go-mcp/actions/workflows/test.yml/badge.svg)](https://github.com/russellhancox/protoc-gen-go-mcp/actions/workflows/test.yml)
+[![Go Report Card](https://goreportcard.com/badge/github.com/russellhancox/protoc-gen-go-mcp)](https://goreportcard.com/report/github.com/russellhancox/protoc-gen-go-mcp)
 [![codecov](https://codecov.io/gh/redpanda-data/protoc-gen-go-mcp/branch/main/graph/badge.svg)](https://codecov.io/gh/redpanda-data/protoc-gen-go-mcp)
 
 **`protoc-gen-go-mcp`** is a [Protocol Buffers](https://protobuf.dev) compiler plugin that generates [Model Context Protocol (MCP)](https://modelcontextprotocol.io) servers for your `gRPC` or `ConnectRPC` APIs.
@@ -23,13 +23,14 @@ It generates `*.pb.mcp.go` files for each protobuf service, enabling you to dele
 ### Generate code
 
 Add entry to your `buf.gen.yaml`:
+
 ```
 ...
 plugins:
   - local:
       - go
       - run
-      - github.com/northpolesec/protoc-gen-go-mcp/cmd/protoc-gen-go-mcp@latest
+      - github.com/russellhancox/protoc-gen-go-mcp/cmd/protoc-gen-go-mcp@latest
     out: ./gen/go
     opt: paths=source_relative
 ```
@@ -82,6 +83,7 @@ testdatamcp.RegisterTestServiceHandlerOpenAI(mcpServer, &srv)
 ```
 
 **Environment variable example:**
+
 ```go
 providerStr := os.Getenv("LLM_PROVIDER")
 var provider testdatamcp.LLMProvider
@@ -118,7 +120,6 @@ This directly connects the MCP handler to the connectrpc client, requiring zero 
 
 It's possible to add extra properties to MCP tools, that are not in the proto. These are written into context.
 
-
 ```go
 // Enable URL override with custom field name and description
 option := runtime.WithExtraProperties(
@@ -140,11 +141,13 @@ testdatamcp.ForwardToTestServiceClient(mcpServer, client, option)
 The generator now creates both standard MCP and OpenAI-compatible handlers automatically. You can choose which to use at runtime:
 
 ### Standard MCP
+
 - Full JSON Schema support (additionalProperties, anyOf, oneOf)
 - Maps represented as JSON objects
 - Well-known types use native JSON representations
 
 ### OpenAI Compatible
+
 - Restricted JSON Schema (no additionalProperties, anyOf, oneOf)
 - Maps converted to arrays of key-value pairs
 - Well-known types (Struct, Value, ListValue) encoded as JSON strings
@@ -155,6 +158,7 @@ The generator now creates both standard MCP and OpenAI-compatible handlers autom
 The old `openai_compat=true` protoc option is **deprecated but still supported** for backward compatibility. With the new approach:
 
 **Before (compile-time):**
+
 ```yaml
 # buf.gen.yaml
 plugins:
@@ -164,6 +168,7 @@ plugins:
 ```
 
 **After (runtime):**
+
 ```go
 // Choose at runtime
 testdatamcp.RegisterTestServiceHandlerWithProvider(server, srv, testdatamcp.LLMProviderOpenAI)
@@ -238,12 +243,14 @@ testdata/
 ```
 
 **To add new tests:** Simply drop a `.proto` file in `pkg/testdata/proto/testdata/` and run the tests. The framework automatically:
+
 1. Discovers all `.proto` files
 2. Generates code using `task generate`
 3. Compares with expected output
 4. Creates missing golden files on first run
 
 **To update golden files after generator changes:**
+
 ```bash
 # Update all golden files
 task generate-golden

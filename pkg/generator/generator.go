@@ -86,7 +86,7 @@ import (
   "encoding/json"
   "github.com/mark3labs/mcp-go/mcp"
   mcpserver "github.com/mark3labs/mcp-go/server"
-  "github.com/northpolesec/protoc-gen-go-mcp/pkg/runtime"
+  "github.com/russellhancox/protoc-gen-go-mcp/pkg/runtime"
   grpc "google.golang.org/grpc"
   "google.golang.org/protobuf/encoding/protojson"
 )

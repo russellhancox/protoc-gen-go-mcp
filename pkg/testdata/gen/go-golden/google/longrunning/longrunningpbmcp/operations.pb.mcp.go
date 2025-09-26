@@ -4,17 +4,17 @@
 package longrunningpbmcp
 
 import (
-	longrunningpb "cloud.google.com/go/longrunning/autogen/longrunningpb"
-	emptypb "google.golang.org/protobuf/types/known/emptypb"
-)
-
-import (
-	"connectrpc.com/connect"
 	"context"
 	"encoding/json"
+
+	longrunningpb "cloud.google.com/go/longrunning/autogen/longrunningpb"
+	"connectrpc.com/connect"
 	"github.com/mark3labs/mcp-go/mcp"
+	emptypb "google.golang.org/protobuf/types/known/emptypb"
+
 	mcpserver "github.com/mark3labs/mcp-go/server"
-	"github.com/northpolesec/protoc-gen-go-mcp/pkg/runtime"
+	"github.com/russellhancox/protoc-gen-go-mcp/pkg/runtime"
+
 	grpc "google.golang.org/grpc"
 	"google.golang.org/protobuf/encoding/protojson"
 )

@@ -4,16 +4,16 @@
 package bytestreammcp
 
 import (
-	bytestream "google.golang.org/genproto/googleapis/bytestream"
-)
-
-import (
-	"connectrpc.com/connect"
 	"context"
 	"encoding/json"
+
+	"connectrpc.com/connect"
 	"github.com/mark3labs/mcp-go/mcp"
+	bytestream "google.golang.org/genproto/googleapis/bytestream"
+
 	mcpserver "github.com/mark3labs/mcp-go/server"
-	"github.com/northpolesec/protoc-gen-go-mcp/pkg/runtime"
+	"github.com/russellhancox/protoc-gen-go-mcp/pkg/runtime"
+
 	grpc "google.golang.org/grpc"
 	"google.golang.org/protobuf/encoding/protojson"
 )

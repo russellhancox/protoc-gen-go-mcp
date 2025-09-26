@@ -16,7 +16,7 @@ package main
 import (
 	"flag"
 
-	"github.com/northpolesec/protoc-gen-go-mcp/pkg/generator"
+	"github.com/russellhancox/protoc-gen-go-mcp/pkg/generator"
 	"google.golang.org/protobuf/compiler/protogen"
 	"google.golang.org/protobuf/types/descriptorpb"
 	"google.golang.org/protobuf/types/pluginpb"

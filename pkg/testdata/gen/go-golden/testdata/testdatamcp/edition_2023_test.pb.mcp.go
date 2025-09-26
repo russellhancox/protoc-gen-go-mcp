@@ -4,18 +4,19 @@
 package testdatamcp
 
 import (
-	testdata "github.com/northpolesec/protoc-gen-go-mcp/pkg/testdata/gen/go/testdata"
-)
-
-import (
 	"context"
+
 	"github.com/mark3labs/mcp-go/mcp"
-	mcpserver "github.com/mark3labs/mcp-go/server"
+	testdata "github.com/russellhancox/protoc-gen-go-mcp/pkg/testdata/gen/go/testdata"
+
 	"encoding/json"
-	"google.golang.org/protobuf/encoding/protojson"
+
 	"connectrpc.com/connect"
+	mcpserver "github.com/mark3labs/mcp-go/server"
+	"google.golang.org/protobuf/encoding/protojson"
+
+	"github.com/russellhancox/protoc-gen-go-mcp/pkg/runtime"
 	grpc "google.golang.org/grpc"
-	"github.com/northpolesec/protoc-gen-go-mcp/pkg/runtime"
 )
 
 var (

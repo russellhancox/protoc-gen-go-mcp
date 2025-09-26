@@ -7,15 +7,16 @@
 package testdata
 
 import (
+	reflect "reflect"
+	sync "sync"
+	unsafe "unsafe"
+
 	_ "google.golang.org/genproto/googleapis/api/annotations"
 	protoreflect "google.golang.org/protobuf/reflect/protoreflect"
 	protoimpl "google.golang.org/protobuf/runtime/protoimpl"
 	anypb "google.golang.org/protobuf/types/known/anypb"
 	structpb "google.golang.org/protobuf/types/known/structpb"
 	timestamppb "google.golang.org/protobuf/types/known/timestamppb"
-	reflect "reflect"
-	sync "sync"
-	unsafe "unsafe"
 )
 
 const (
@@ -659,7 +660,7 @@ const file_testdata_edition_2023_test_proto_rawDesc = "" +
 	"CreateItem\x12&.testdata.CreateItemRequestEdition2023\x1a'.testdata.CreateItemResponseEdition2023\x12T\n" +
 	"\aGetItem\x12#.testdata.GetItemRequestEdition2023\x1a$.testdata.GetItemResponseEdition2023\x12~\n" +
 	"\x15ProcessWellKnownTypes\x121.testdata.ProcessWellKnownTypesRequestEdition2023\x1a2.testdata.ProcessWellKnownTypesResponseEdition2023B\xad\x01\n" +
-	"\fcom.testdataB\x14Edition2023TestProtoP\x01ZGgithub.com/northpolesec/protoc-gen-go-mcp/pkg/testdata/gen/go/testdata\xa2\x02\x03TXX\xaa\x02\bTestdata\xca\x02\bTestdata\xe2\x02\x14Testdata\\GPBMetadata\xea\x02\bTestdatab\beditionsp\xe8\a"
+	"\fcom.testdataB\x14Edition2023TestProtoP\x01ZGgithub.com/russellhancox/protoc-gen-go-mcp/pkg/testdata/gen/go/testdata\xa2\x02\x03TXX\xaa\x02\bTestdata\xca\x02\bTestdata\xe2\x02\x14Testdata\\GPBMetadata\xea\x02\bTestdatab\beditionsp\xe8\a"
 
 var (
 	file_testdata_edition_2023_test_proto_rawDescOnce sync.Once

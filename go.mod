@@ -1,4 +1,4 @@
-module github.com/northpolesec/protoc-gen-go-mcp
+module github.com/russellhancox/protoc-gen-go-mcp
 
 go 1.23.5
 

@@ -21,7 +21,7 @@ import (
 	"google.golang.org/protobuf/encoding/protojson"
 	"google.golang.org/protobuf/proto"
 
-	testdata "github.com/northpolesec/protoc-gen-go-mcp/pkg/testdata/gen/go/testdata"
+	testdata "github.com/russellhancox/protoc-gen-go-mcp/pkg/testdata/gen/go/testdata"
 )
 
 func TestFixOpenAI(t *testing.T) {

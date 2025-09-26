@@ -19,9 +19,9 @@ import (
 	"testing"
 
 	mcpserver "github.com/mark3labs/mcp-go/server"
-	testdata "github.com/northpolesec/protoc-gen-go-mcp/pkg/testdata/gen/go/testdata"
-	testdatamcp "github.com/northpolesec/protoc-gen-go-mcp/pkg/testdata/gen/go/testdata/testdatamcp"
 	. "github.com/onsi/gomega"
+	testdata "github.com/russellhancox/protoc-gen-go-mcp/pkg/testdata/gen/go/testdata"
+	testdatamcp "github.com/russellhancox/protoc-gen-go-mcp/pkg/testdata/gen/go/testdata/testdatamcp"
 	"google.golang.org/protobuf/proto"
 )
 
