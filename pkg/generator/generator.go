@@ -346,7 +346,7 @@ func ForwardToSimpleConnect{{$key}}Client(s *mcpserver.MCPServer, client SimpleC
       return runtime.HandleError(err)
     }
 
-    marshaled, err = (protojson.MarshalOptions{UseProtoNames: true, EmitDefaultValues: true}).Marshal(resp.Msg)
+    marshaled, err = (protojson.MarshalOptions{UseProtoNames: true, EmitDefaultValues: true}).Marshal(resp)
     if err != nil {
       return nil, err
     }
